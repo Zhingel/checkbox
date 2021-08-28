@@ -5,9 +5,15 @@
 //  Created by Стас Жингель on 28.08.2021.
 //
 
-import Foundation
+import UIKit
 
 class Task {
     var isEnabled: Bool = false
     
+}
+
+
+struct buttonColor {
+    var color: UIColor
+    var isEnable: Bool = false
 }

@@ -21,6 +21,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         view.addSubview(collectionView)
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(lastCell.self, forCellWithReuseIdentifier: "lastCell")
+        collectionView.backgroundColor = .gray
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -39,14 +41,21 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        
         cell.backgroundColor = .green
-        if indexPath.row != tasks.count + 1 {
-        cell.button.setImage(tasks[indexPath.row].isEnabled ? UIImage(systemName: "largecircle.fill.circle",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)) : UIImage(systemName: "circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .normal)
-        cell.tapp = {
-            self.tasks[indexPath.row].isEnabled.toggle()
-            self.collectionView.reloadData()
-        } }
+        if indexPath.row == tasks.count {
+            let lastCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastCell", for: indexPath) as! lastCell
+            lastCell.backgroundColor = .white
+            lastCell.layer.cornerRadius = 20
+            
+            
+            return lastCell
+        } else {
+            cell.button.setImage(tasks[indexPath.row].isEnabled ? UIImage(systemName: "largecircle.fill.circle",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)) : UIImage(systemName: "circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .normal)
+            cell.tapp = {
+                self.tasks[indexPath.row].isEnabled.toggle()
+                self.collectionView.reloadData()
+            }
+        }
         return cell
     }
     
@@ -55,10 +64,10 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row != 10 {
+        if indexPath.row != tasks.count  {
          return   CGSize(width: 100, height: 100)}
         else {
-         return   CGSize(width: view.bounds.width, height: 150)
+         return   CGSize(width: view.bounds.width - 40, height: 150)
         }
     }
 
