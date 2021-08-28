@@ -13,6 +13,8 @@
 		EE06258D26DA2B7600FCF3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE06258B26DA2B7600FCF3DB /* Main.storyboard */; };
 		EE06258F26DA2B7700FCF3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE06258E26DA2B7700FCF3DB /* Assets.xcassets */; };
 		EE06259226DA2B7700FCF3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE06259026DA2B7700FCF3DB /* LaunchScreen.storyboard */; };
+		EE06259A26DA2CD900FCF3DB /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE06259926DA2CD900FCF3DB /* cell.swift */; };
+		EE06259C26DA3DF600FCF3DB /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE06259B26DA3DF600FCF3DB /* model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EE06258E26DA2B7700FCF3DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE06259126DA2B7700FCF3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE06259326DA2B7700FCF3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE06259926DA2CD900FCF3DB /* cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
+		EE06259B26DA3DF600FCF3DB /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				EE06258526DA2B7600FCF3DB /* AppDelegate.swift */,
 				EE06258726DA2B7600FCF3DB /* SceneDelegate.swift */,
 				EE06258926DA2B7600FCF3DB /* ViewController.swift */,
+				EE06259B26DA3DF600FCF3DB /* model.swift */,
+				EE06259926DA2CD900FCF3DB /* cell.swift */,
 				EE06258B26DA2B7600FCF3DB /* Main.storyboard */,
 				EE06258E26DA2B7700FCF3DB /* Assets.xcassets */,
 				EE06259026DA2B7700FCF3DB /* LaunchScreen.storyboard */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE06259C26DA3DF600FCF3DB /* model.swift in Sources */,
 				EE06258A26DA2B7600FCF3DB /* ViewController.swift in Sources */,
+				EE06259A26DA2CD900FCF3DB /* cell.swift in Sources */,
 				EE06258626DA2B7600FCF3DB /* AppDelegate.swift in Sources */,
 				EE06258826DA2B7600FCF3DB /* SceneDelegate.swift in Sources */,
 			);
