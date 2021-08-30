@@ -14,6 +14,13 @@ class Task {
 
 
 struct buttonColor {
-    var color: UIColor
+    var button: UIButton
     var isEnable: Bool = false
+}
+
+extension UIButton {
+    convenience init(color: UIColor) {
+        self.init()
+        self.tintColor = color
+    }
 }

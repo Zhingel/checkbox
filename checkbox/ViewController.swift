@@ -46,6 +46,7 @@ extension ViewController: UICollectionViewDataSource {
             let lastCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastCell", for: indexPath) as! lastCell
             lastCell.backgroundColor = .white
             lastCell.layer.cornerRadius = 20
+
             
             
             return lastCell
